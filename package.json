@@ -1,0 +1,16 @@
+{
+  "name": "neoblog_instance",
+  "version": "1.0.0",
+  "description": "Rocka's blog configuration",
+  "main": "index.js",
+  "scripts": {
+    "start": "newblog"
+  },
+  "keywords": [],
+  "author": "rocka",
+  "license": "MIT",
+  "dependencies": {
+    "neoblog": "git+https://github.com/Rocket1184/neoblog.git",
+    "neoblog-template-teal": "git+https://github.com/Rocket1184/neoblog-template-teal.git"
+  }
+}
