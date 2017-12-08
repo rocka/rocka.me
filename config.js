@@ -1,6 +1,6 @@
 module.exports = {
     // title of all HTML pages. Cannot be null.
-    title: 'NeoBlog',
+    title: 'Rocka\'s Blog',
     // local server port. default to `2233` .
     port: 2233,
     // path to article directory. default to `./article` .
@@ -14,13 +14,13 @@ module.exports = {
     templateArgs: {
         nav: [
             {
-                name: 'Index',
+                name: 'Rocka\'s Blog',
                 link: '/'
             }
         ],
         side: [
             {
-                name: 'Info',
+                name: 'Server Info',
                 items: [
                     `OS: ${process.platform} ${process.arch}`,
                     `Node: ${process.version}`
