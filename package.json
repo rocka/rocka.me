@@ -4,7 +4,7 @@
   "description": "Rocka's blog configuration",
   "main": "index.js",
   "scripts": {
-    "start": "newblog"
+    "start": "neoblog"
   },
   "keywords": [],
   "author": "rocka",
