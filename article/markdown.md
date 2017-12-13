@@ -15,7 +15,7 @@
 >这是引用
 引用的第二行
 
-![必应美图 2016-10-04](https://rocka.me/static/NASABahamas.jpg)
+![必应美图 2016-10-04](https://rocka.me/static/img/NASABahamas.jpg)
 
 这是一个段落。里面包含了一个[链接](http://rocka.me/?query=string%enc0de#hash)，和一个`行内代码块`。
 
