@@ -6,7 +6,7 @@ module.exports = {
     // path to article directory. default to `./article` .
     articleDir: './article',
     // path to template directory. set `null` to use built-in template.
-    templateDir: './neoblog-template-teal/template',
+    templateDir: './template/template',
     // plugins to load. At least an empty array.
     plugins: [
         require('./plugin/static-route'),
