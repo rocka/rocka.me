@@ -13,9 +13,7 @@ const router = new Router();
 
 router.get('/:file', async (ctx, next) => {
     const filePath = path.join(process.cwd(), 'www-root', ctx.params.file);
-    console.log(filePath);
     const err = await access(filePath, fs.constants.R_OK)
-    console.log(err);
     if (err) {
         next();
     } else {

@@ -3,7 +3,7 @@
 const path = require('path');
 
 const Mount = require('koa-mount');
-const Static = require('koa-static-cache');
+const Static = require('koa-static');
 
 const route = Mount('/static', Static(path.join(process.cwd(), 'www-root/static'), {
     maxAge: 365 * 24 * 60 * 60,
