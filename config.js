@@ -34,6 +34,11 @@ module.exports = {
                     `Node: ${process.version}`
                 ]
             }
-        ]
+        ],
+        isso: {
+            css: "false",
+            lang: "zh",
+            embed: "https://isso.rocka.me/js/embed.min.js"
+        }
     }
 };
