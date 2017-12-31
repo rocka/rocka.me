@@ -24,14 +24,14 @@ module.exports = {
             {
                 name: 'Links',
                 items: [
-                    `<a href="https://zeeko.1503.run" target="_blank">Zeeko</a>`,
+                    { text: 'Zeeko', link: 'https://zeeko.1503.run', target: 'blank' }
                 ]
             },
             {
                 name: 'Server Info',
                 items: [
-                    `OS: ${process.platform} ${process.arch}`,
-                    `Node: ${process.version}`
+                    { text: `OS: ${process.platform} ${process.arch}` },
+                    { text: `Node: ${process.version}` }
                 ]
             }
         ],
