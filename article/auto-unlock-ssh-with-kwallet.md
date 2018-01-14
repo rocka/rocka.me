@@ -16,7 +16,7 @@
 
 ## 1 安装必要的软件包
 
-首先要安装的肯定时是`openssh`。然后还要一个输密码的 GUI ，即`ksshaskpass`：
+首先要安装的肯定是`openssh`。然后还要一个输密码的 GUI ，即`ksshaskpass`：
 
 ```bash
 sudo pacman -S openssh ksshaskpass
@@ -54,7 +54,7 @@ systemctl --user enable ssh-agent.service
 ssh-add < /dev/null
 ```
 
-然后添加执行权限。如果要添加多个密钥，可以给ssh-add追加参数指定密钥文件。默认加入的是`~/.ssh/id_rsa`
+然后不要忘了 **添加执行权限**。如果要添加多个密钥，可以给 `ssh-add` 追加参数指定密钥文件。默认加入的是`~/.ssh/id_rsa`
 
 ## 4 设置环境变量
 
@@ -69,4 +69,4 @@ export SSH_ASKPASS="/usr/bin/ksshaskpass"
 
 搞好这些之后，注销重新登录，就会看见`ksshaskpass`在弹窗要求你输入密钥了。允许保存密码之后，注销或重启都不需要再输入密码。 不过前提是KWallet需要[登录时自动解锁](https://wiki.archlinux.org/index.php/KDE_Wallet#Unlock_KDE_Wallet_automatically_on_login)。这个配置起来比较简单，这里就不复制粘贴了。
 
-![Ksshaskpass](https://rocka.me/static/img/877509-20170316005016807-1925666694.png)
+![ksshaskpass](https://rocka.me/static/img/877509-20170316005016807-1925666694.png)
