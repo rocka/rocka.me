@@ -24,7 +24,8 @@ module.exports = {
             {
                 name: 'Links',
                 items: [
-                    { text: 'Zeeko', link: 'https://zeeko.1503.run', target: 'blank' }
+                    { text: 'Zeeko', link: 'https://gianthard.rocks', target: '_blank' },
+                    { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' }
                 ]
             },
             {
