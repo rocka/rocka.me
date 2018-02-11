@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "koa-static": "^4.0.2",
-    "neoblog": "git+https://github.com/rocket1184/neoblog.git"
+    "neoblog": "github:rocket1184/neoblog"
   }
 }

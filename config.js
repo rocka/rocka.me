@@ -1,3 +1,5 @@
+const PluginCustomPage = require('./plugin/custom-page');
+
 module.exports = {
     // title of all HTML pages. Cannot be null.
     title: 'Rocka\'s Blog',
@@ -9,16 +11,18 @@ module.exports = {
     templateDir: './template/template',
     // plugins to load. At least an empty array.
     plugins: [
+		new PluginCustomPage({
+            file: './custom/about.md',
+			route: '/about'
+        }),
         require('./plugin/static-route'),
         require('./plugin/root-content')
     ],
     // arguments passed to template. can be anything but null.
     templateArgs: {
         nav: [
-            {
-                name: 'Rocka\'s Blog',
-                link: '/'
-            }
+            { name: 'Rocka\'s Blog', link: '/' },
+			{ name: 'About', link: '/about' }
         ],
         side: [
             {
@@ -37,7 +41,6 @@ module.exports = {
             }
         ],
         isso: {
-            css: "false",
             lang: "zh",
             embed: "https://isso.rocka.me/js/embed.min.js"
         }

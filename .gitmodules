@@ -1,3 +1,6 @@
 [submodule "template"]
 	path = template
 	url = https://github.com/rocket1184/neoblog-template-teal
+[submodule "plugin/custom-page"]
+	path = plugin/custom-page
+	url = https://github.com/rocket1184/neoblog-plugin-custom-page
