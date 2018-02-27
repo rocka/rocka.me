@@ -17,17 +17,15 @@
 
 ![必应美图 2016-10-04](https://rocka.me/static/img/NASABahamas.jpg)
 
-这是一个段落。里面包含了一个[链接](http://rocka.me/?query=string%enc0de#hash)，和一个`行内代码块`。
-
+这是一个段落。里面包含了一个[链接](http://rocka.me)，和一个`行内代码块`。
 
 然后是一个代码块：
 
 ```js
-/** 
-  * 多行注释
-  *
-  * 下一行
-  */
+/**
+ * JSDoc comments
+ * @param {*} params
+ */
 let s = function name(params) {
     // some comment here
     console.log(new Map().set('foo', 'bar'));
