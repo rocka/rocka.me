@@ -1,30 +1,20 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
-const util = require('util');
 
-const access = util.promisify(fs.access);
+const Mount = require('koa-mount');
+const Static = require('koa-static-cache');
 
-const Send = require('koa-send');
-const Router = require('koa-router');
-
-const router = new Router();
-
-router.get('/:file', async (ctx, next) => {
-    const filePath = path.join(process.cwd(), 'www-root', ctx.params.file);
-    const err = await access(filePath, fs.constants.R_OK)
-    if (err) {
-        next();
-    } else {
-        await Send(ctx, filePath, { root: '/' }); 
-    }
-});
+const route = Mount(Static({
+    dir: path.join(process.cwd(), 'www-root'),
+    preload: false,
+    dynamic: true
+}));
 
 module.exports = {
     name: 'root-content-plugin',
     version: '0.1.0',
-    description: 'try serve `/:file`',
+    description: 'try serve `/path/to/file` under ./www-root',
     author: 'rocka <i@rocka.me>',
-    routes: router.routes()
+    routes: route
 };
