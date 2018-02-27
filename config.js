@@ -15,7 +15,6 @@ module.exports = {
             file: './custom/about.md',
             route: '/about'
         }),
-        require('./plugin/static-route'),
         require('./plugin/root-content')
     ],
     // arguments passed to template. can be anything but null.
