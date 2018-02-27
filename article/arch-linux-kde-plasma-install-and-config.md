@@ -10,9 +10,7 @@
 
 首先是备份，直接把 `/home` 打成 tar 包复制到固态最后面一块刚划出来的分区里面备用。然后进入 LiveCD ，把 f2fs 分区干掉，换成 ext4 。这里又想吐槽一次了，f2fs 居然不支持分区移动和收缩，要拓展分区只能用 `resize.f2fs`，`parted` 也是拿他没什么办法。
 
-<p align="center">
------------ arch-chroot 分割线 ----------
-</p>
+> arch-chroot 分割线
 
 先安装基本的软件包，当然少不了 fish shell 了！
 
@@ -23,7 +21,7 @@ pacman -S sudo fish git vim zsh nodejs npm shadowsocks-libev proxychains
 在 Arch Wiki 的 KDE 安装环节，只提到了安装 `kde-applications` 软件包组或 `kde-applications-meta` 包。但这样会搞出很多没用的包，比如各种游戏，莫名奇妙的化学工具，“KDE 元素周期表”等等 ... 需要酌情做一些精简。
 
 ```bash
-pacman -S xorg xorg-server plasma dolphin kate kdialog konsole kfind dragon ffmpegthumbs kde-meta-kdeadmin kde-meta-kdeutils kde-meta-kdegraphics sddm sddm-kcm 
+pacman -S xorg xorg-server plasma dolphin kate kdialog konsole kfind dragon ffmpegthumbs kde-meta-kdeadmin kde-meta-kdeutils kde-meta-kdegraphics sddm sddm-kcm
 ```
 
 然后是一些驱动，之前一直没有安装 Intel 的显卡驱动，还以为是优化不好 ...
@@ -110,8 +108,8 @@ EndSection
 
 ```bash
 # 语言和时区
-vim /etc/locale.gen 
-locale-gen 
+vim /etc/locale.gen
+locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 tzselect
 
@@ -196,8 +194,6 @@ vim ~/.config/plasma-org.kde.plasma.desktop-appletsrc
 ```
 
 然后注销，再登录，托盘图标大小就正常了。
-
-
 
 最后的最后，附图一张：
 
