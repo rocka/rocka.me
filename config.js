@@ -11,9 +11,9 @@ module.exports = {
     templateDir: './template/template',
     // plugins to load. At least an empty array.
     plugins: [
-		new PluginCustomPage({
+        new PluginCustomPage({
             file: './custom/about.md',
-			route: '/about'
+            route: '/about'
         }),
         require('./plugin/static-route'),
         require('./plugin/root-content')
@@ -22,14 +22,16 @@ module.exports = {
     templateArgs: {
         nav: [
             { name: 'Rocka\'s Blog', link: '/' },
-			{ name: 'About', link: '/about' }
+            { name: 'About', link: '/about' }
         ],
         side: [
             {
                 name: 'Links',
                 items: [
                     { text: 'Zeeko', link: 'https://gianthard.rocks', target: '_blank' },
-                    { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' }
+                    { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' },
+                    { text: 'Sxyazi\'s', link: 'https://sxyz.blog', target: '_blank' },
+                    { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' }
                 ]
             },
             {
