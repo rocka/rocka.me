@@ -19,6 +19,7 @@ module.exports = {
     ],
     // arguments passed to template. can be anything but null.
     templateArgs: {
+        lang: 'zh',
         nav: [
             { name: 'Rocka\'s Blog', link: '/' },
             { name: 'About', link: '/about' }
