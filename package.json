@@ -10,7 +10,7 @@
   "author": "rocka",
   "license": "MIT",
   "dependencies": {
-    "koa-static": "^4.0.2",
+    "koa-static-cache": "^5.1.2",
     "neoblog": "github:rocket1184/neoblog"
   }
 }
