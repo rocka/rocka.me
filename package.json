@@ -7,7 +7,11 @@
     "start": "neoblog"
   },
   "keywords": [],
-  "author": "rocka",
+  "author": "rocka <i@rocka.me>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rocket1184/rocka.me"
+  },
   "license": "MIT",
   "dependencies": {
     "koa-static-cache": "^5.1.2",
