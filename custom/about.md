@@ -1,8 +1,8 @@
 ```meta
 {
-	"title": "关于",
-	"date": "Sun Feb 11 2018 15:51:54 GMT+0800 (CST)",
-	"tags": []
+    "title": "关于",
+    "date": "Sun Feb 11 2018 15:51:54 GMT+0800 (CST)",
+    "tags": []
 }
 ```
 
@@ -10,11 +10,11 @@
 
 家住北方某三线城市，目前某南方普通高等院校软件工程本科就读。
 
-对学校里的大部分课程都没什么兴趣。大一时被社团里某全干工程师骗去学前端~~，仿佛打开了新世界的大门~~。后来又迷上了 NodeJS ，也玩过 Electron 。
+对学校里的大部分课程都没什么兴趣。大一时被社团里某全干工程师骗去学前端 ~~，仿佛打开了新世界的大门~~。后来又迷上了 NodeJS ，也玩过 Electron 。
 
-高中时在同学~~暗恋的妹纸~~ QQ 空间里听了 [GUMI 的歌](https://www.bilibili.com/video/av769968) ，因此入了 V 家坑。在网易云音乐的调教下完全成了 V 家众，其他的都几乎不听。
+高中时在同学 ~~暗恋的妹纸~~ 的 QQ 空间里听了 [GUMI 的歌](https://www.bilibili.com/video/av769968) ，因此入了 V 家坑。在网易云音乐的调教下完全成了 V 家众，其他的都几乎不听。
 
-目前主力的操作系统是 Arch Linux 。桌面环境是 KDE Plasma 。这也要感谢上面提到的某全干工程师，他带我入了 Linux 坑。然而他自己现在却是软粉~~好像一直都是~~。
+目前主力的操作系统是 Arch Linux 。桌面环境是 KDE Plasma 。这也要感谢上面提到的某全干工程师，他带我入了 Linux 坑。然而他自己现在却是软粉 ~~好像一直都是~~。
 
 ## ID
 
@@ -36,21 +36,23 @@
 
 小学时经常在电话点播的电视台上看打牌王，那时候大部分是 DM 和 GX ，没有完整看过，所以傻傻分不清。高中时第一次完整看完了一部 缘之空 ，后来就高三了。
 
-看**完**动画不多，按时间排序的话大概有 [缘之空]() 、 [线上老婆](https://bangumi.bilibili.com/anime/3495) 、 [俺妹](https://bangumi.bilibili.com/anime/2660)/[第二季](https://bangumi.bilibili.com/anime/2661) 、 [友少](https://bangumi.bilibili.com/anime/415)/[NEXT](https://bangumi.bilibili.com/anime/416) 、 [樱花庄](https://bangumi.bilibili.com/anime/687) 、[打牌王5DS](https://bangumi.bilibili.com/anime/1717) 、 [埃罗芒阿](https://bangumi.bilibili.com/anime/5997)  、 [珈百璃](https://bangumi.bilibili.com/anime/5793) 。尝试学习白学，但画风实在接受不能。
+看**完**动画不多，按时间排序的话大概有 [缘之空](https://movie.douban.com/subject/4848114/) 、 [线上老婆](https://bangumi.bilibili.com/anime/3495) 、 [俺妹](https://bangumi.bilibili.com/anime/2660)/[第二季](https://bangumi.bilibili.com/anime/2661) 、 [友少](https://bangumi.bilibili.com/anime/415)/[NEXT](https://bangumi.bilibili.com/anime/416) 、 [小埋](https://bangumi.bilibili.com/anime/2580) 、 [樱花庄](https://bangumi.bilibili.com/anime/687) 、[打牌王5DS](https://bangumi.bilibili.com/anime/1717) 、 [埃罗芒阿](https://bangumi.bilibili.com/anime/5997)  、 [珈百璃](https://bangumi.bilibili.com/anime/5793) 。尝试学习白学，但画风实在接受不能。
 
 与大学里实验室的朋友们一起玩 MineCraft ，休闲玩家。保留节目是在元旦与春节的时候一起放烟花。只在创造模式中杀死过凋零，用指令杀死过末影龙。
 
 红色警戒2/3手残玩家，有时打不过电脑。FPS 人体描边大师，最喜欢的是 CS 起源打 Bot 。DotA 经常被电脑虐，不会出装。~~所以现在几乎都不碰~~
 
-~~几乎不玩手游~~碧蓝航线无氪咸鱼提督，想要弃坑了。
+~~几乎不玩手游~~ ~~碧蓝航线无氪咸鱼提督，想要弃坑了。~~ 已经弃坑，变回到一个几乎不玩手游的人。但手机上常驻 PPSSPP 与 初音ミク -Project DIVA- / 2nd ，而且会经常幻想拥有一个 PS4 。~~然而并没有时间玩吧~~
 
 ## 消费电子相关
 
 高中毕业后买了个寨板~~作为主力机~~现在备用，Core M 5Y10c + 128 GB SSD 。通过充分的折腾熟悉了各路系统（主要是 Win10 以及 Ubuntu）以及驱动的安装。然后对安装以及配置系统产生了厌恶，每次都像是删档重来，浪费人生。
 
-目前的主力通信设备是 Oneplus One ，使用 LineageOS 14.1 。~~801 之后再无高通，bacon 之后再无一加~~
+目前的 ~~主力通信~~ 备用设备是 Oneplus One ，使用 LineageOS 14.1 。~~801 之后再无高通，bacon 之后再无一加~~
 
-主要的生产力设备~~然而并没有多少生产力~~是 XPS 13 9350 。装着 Arch + Win10 双系统，Win10 主要用来更新 BIOS。
+目前的主力通信设备是 Xiaomi Mi 6 ，使用 Mokee 71.2 。是谁说蓝牙耳机更方便的？告诉你们一个秘密，其实有耳机孔的手机，也是可以使用蓝牙耳机的。
+
+主要的生产力设备 ~~然而并没有多少生产力~~ 是 XPS 13 9350 。装着 Arch + Win10 双系统，Win10 主要用来更新 BIOS。
 
 ## 使用的软件与服务
 
@@ -62,7 +64,7 @@ Office 365 订阅用户，但使用频率很低，主要用来往 OneDrive 同�
 
 因为是前端，所以 Chrome 和 Firefox 双持。在 Windows 里面还会再加上 Edge ，几个浏览器随机用。但书签还是只存在 Chrome 里面，因为手机浏览器只用 Chrome 。
 
-无条件讨厌国内一切魔改 Chromium 浏览器。“谢谢，我不需要脑残段子和标题党新闻客户端。”
+无条件讨厌国内一切魔改 Chromium 浏览器。当然，不得不承认它们在淘汰 IE 上还是做出了不小的贡献的。
 
 目前的主力 IM 切换到了 Telegram 。微信是全世界最垃圾的 IM ，没有之一。之前用 QQ 国际版，现在改用 TIM ，只用来加入一些班级群接收通知。
 
@@ -106,14 +108,3 @@ Office 365 订阅用户，但使用频率很低，主要用来往 OneDrive 同�
 - Twitter: [@Rocket1184](https://twitter.com/rocket1184)
 - Mastodon: [Rocka@sn.angry.im](https://sn.angry.im/@Rocka)
 - Weibo: [@Rocket1184](https://weibo.com/u/2353697613)
-
-
-
-
-
-
-
-
-
-
-
