@@ -14,7 +14,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "koa-static-cache": "^5.1.2",
-    "neoblog": "github:rocket1184/neoblog"
+    "@neoblog/neoblog": "^0.1.0",
+    "@neoblog/plugin-custom-page": "^0.1.0",
+    "@neoblog/template-teal": "^1.0.1",
+    "koa-static-cache": "^5.1.2"
   }
 }

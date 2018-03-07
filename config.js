@@ -1,4 +1,4 @@
-const PluginCustomPage = require('./plugin/custom-page');
+const PluginCustomPage = require('@neoblog/plugin-custom-page');
 
 module.exports = {
     // title of all HTML pages. Cannot be null.
@@ -8,7 +8,7 @@ module.exports = {
     // path to article directory. default to `./article` .
     articleDir: './article',
     // path to template directory. set `null` to use built-in template.
-    templateDir: './template/template',
+    templateDir: './node_modules/@neoblog/template-teal/template',
     // plugins to load. At least an empty array.
     plugins: [
         new PluginCustomPage({
