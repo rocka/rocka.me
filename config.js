@@ -44,7 +44,9 @@ module.exports = {
         ],
         isso: {
             lang: "zh",
-            embed: "https://isso.rocka.me/js/embed.min.js"
+            embed: "https://isso.rocka.me/js/embed.min.js",
+            author: true,
+            email: true
         }
     }
 };

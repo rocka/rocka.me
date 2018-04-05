@@ -16,7 +16,7 @@
   "dependencies": {
     "@neoblog/neoblog": "^0.1.0",
     "@neoblog/plugin-custom-page": "^0.1.0",
-    "@neoblog/template-teal": "^1.0.1",
+    "@neoblog/template-teal": "^1.1.0",
     "koa-static-cache": "^5.1.2"
   }
 }
