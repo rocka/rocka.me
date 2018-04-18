@@ -19,7 +19,7 @@ ID 跟别人重复是一件非常尴尬的事情。尤其是当你想出一个�
 
 >Hi,
 >
->I'm enquiring about whether username rocka can be released? The user who has registered that username doesn't look to have any activity. Seeing as I own the domain \`rocka.me\` and \[npm account\](https://www.npmjs.com/~rocka).
+>I'm enquiring about whether username rocka can be released? The user who has registered that username doesn't look to have any activity. Seeing as I own the domain \`rocka.me\` and \[npm account\](<span>https://www.npmjs.com/~rocka</span>).
 >
 >Would just like to know whether this would be possible.
 >
