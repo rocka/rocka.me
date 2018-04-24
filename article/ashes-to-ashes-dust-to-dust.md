@@ -6,8 +6,6 @@
 }
 ```
 
-<style> body { filter: grayscale(1); } </style>
-
 一切都结束了。
 
 父亲去世那天，阳光很明媚。
