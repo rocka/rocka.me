@@ -6,9 +6,15 @@
 }
 ```
 
-这几天挖了 [新坑 MelodyPlayer](https://github.com/rocka/melody-player) ，其中有用到 Google 的 [Material Icons](http://google.github.io/material-design-icons/#icon-font-for-the-web) 。虽然它的 woff2 格式只有 42KB ，但我只用了其中的 10 个图标，加载整个字体文件得很不划算。于是想找一些压图标字体的方法，最好能只保留我需要的字符，肯定能大幅减小体积。
+> **UPDATE:** 写了一个傻傻的 [Python 脚本](https://github.com/rocka/melody-player/blob/6b21df84b79ec5780c17c56eff5812319fbb8fb9/font/create_font.py) 来自动处理字体，只要将所需要的图标名称每行一个写入 `icon-names.txt` ，就能一键生成压缩好的字体文件。(2018/04/26)
 
-Material Icon 虽然提供了制作 Sprite 图片的解决方案，但只有 SVG 或 CSS Sprite ，而我直接在 `<button>` 的文本里面写图标的名字，没办法兼容这种用法。而我又不愿意改代码，一心只想折腾字体。
+以下是原文。
+
+---
+
+这几天挖了 [新坑 MelodyPlayer](https://github.com/rocka/melody-player) ，其中有用到 Google 的 [Material Icons](http://google.github.io/material-design-icons/#icon-font-for-the-web) 。虽然它的 woff2 格式只有 42KB ，但我只用了其中的 10 个图标，加载整个字体文件显得很不划算。虽然 Material Icons 提供了制作 Sprite 的方案，但只有 SVG 或 CSS Sprite ，而的用法是 `<button>` 里写图标的名字，不能兼容。
+
+而我又不愿意改代码，于是想寻找一种提取字体中特定字符的方法，肯定能大幅减文件小体积。
 
 经过一番搜索，找到了 [`fonttools`](https://github.com/fonttools/fonttools) 这个强大的工具，可以精确控制字体文件的每一个 Glyph ，最大限度压缩字体。
 
@@ -318,6 +324,6 @@ echo "data:font/woff2;charset=utf-8;base64,"$(base64 -w 0 ic.min.woff2)
 
 测试一番吧：
 
-<style>@font-face{font-family:MDIC;src:url(data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAPIAA8AAAAACigAAANxAAEEWgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbEByCVAZgAIIACAQRCAqHCIQFATYCJANOC04ABCAFgnwHIBtUBwieg02ZnZVGZpm0i1Nb0lxy/ZfEw/P36rmvc+IeoI114sKNAekaVJrmqchPNRMw/OF5fn947tOHJyIBbgoZbGmLeSt5Pv9zv/v2MfEkonGS98WUqFotQaWJJw7ZLRHiavB/4JjywNZgWYQDm1iWRVtVIEQU0Hg8mg1sYLsf9AB080bxv+bhHeusk0n6BwjoB0gUUUvUaacI9IqlAAG9GvSRIm/VI4wBeQhEUaXgEQYBwTAQfBI5IzXh2jhhtCk4NbScUsoShlIok8gZMcWpUy+UUGoIpVSpXJU6llKhjNMBjVqn4JjlRC4DNPDTr8SKLTin51esSgXNCpVyjHK50n2Xi1IhX6Bci0QsVBDFKrBSyD7G2CxQWPtvq1auiSdQweNJOK27WKrWiKtuKWMS8skiDokcsBNfoyXdFxLbBoAYBgDw7KZ5TwEJEAAwoxfaoQ0WoBfeaQILNL+XcQvG5TTjhrtS+9rw2vXa9zrwkfZ1LwTO8Cm887XnM4VNYSP3N/c79zn3KfcxOyrjAATQ9QP3nD1w9m0PuAC3IKFS2/BMoNKAYRKVTsouwBQqPfR9gBlUBvDMo56GZwHN+196i4roBUQeClgCDsEWfEAGgG6A6JiKULRUsUYFvIzRQeC50CMKbYBBF8nPcBdJhaGO1AVDS0gkseNTEGEkckQTSQQJZbaPmbAwHQi3kymRWLiuUNBlbGWd9YjjKJasuoim4hMSzfFRBceUSULfR4giopNKgMfa71EFs+vWCnz//r3RPP6yFWMsHUFH5/XoHZBUamLyUrbLmR0toqXa3b1vt+8HZcq3qSKj3/+Ul+4nvf4J9FMlejPsPeFScKVwHOP1CeBpxuvpiuefAmB+wnIpeI6O/qOyfGF/B54AgIBoP19g/9ZvYltbYZEClGfsI8B/0M0GIP4iA90UEEhAAoU4QQAAIsEIsD77sWQwxtgjjhBYUk0DCYJAQQ1Al3Mi0h6Ac2AIUecWoaSeENqhyUqjIqwaf8/i9PjXw8DIxUxFQckqz4ghwyY1WWFgoKAlU6XJGj2JGk2WaWnl2V8XW+hlMhYyZnYyUjW28KyJXYWnrfKXMNCzLE1SsNHimfWnYmu0mynIDhIOOLDJTOGFHDF5xKh+w/ov0U45frQWKt2RZ9jAjblL+b2H6vO0RIBZDiMAAAA=);} #mdic-demo{font-size:36px;color:#abb2bf;background:#282c34;font-family:MDIC;display:flex;justify-content:space-around;flex-wrap:wrap;}</style><div id="mdic-demo"><span>skip_previous</span><span>skip_next</span><span>play_arrow</span><span>pause</span><span>stop</span><span>subdirectory_arrow_right</span><span>repeat_one</span><span>repeat</span><span>shuffle</span><span>keyboard_capslock</span></div>
+<style>@font-face{font-family:MDIC;src:url(data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAAPIAA8AAAAACigAAANxAAEEWgAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbEByCVAZgAIIACAQRCAqHCIQFATYCJANOC04ABCAFgnwHIBtUBwieg02ZnZVGZpm0i1Nb0lxy/ZfEw/P36rmvc+IeoI114sKNAekaVJrmqchPNRMw/OF5fn947tOHJyIBbgoZbGmLeSt5Pv9zv/v2MfEkonGS98WUqFotQaWJJw7ZLRHiavB/4JjywNZgWYQDm1iWRVtVIEQU0Hg8mg1sYLsf9AB080bxv+bhHeusk0n6BwjoB0gUUUvUaacI9IqlAAG9GvSRIm/VI4wBeQhEUaXgEQYBwTAQfBI5IzXh2jhhtCk4NbScUsoShlIok8gZMcWpUy+UUGoIpVSpXJU6llKhjNMBjVqn4JjlRC4DNPDTr8SKLTin51esSgXNCpVyjHK50n2Xi1IhX6Bci0QsVBDFKrBSyD7G2CxQWPtvq1auiSdQweNJOK27WKrWiKtuKWMS8skiDokcsBNfoyXdFxLbBoAYBgDw7KZ5TwEJEAAwoxfaoQ0WoBfeaQILNL+XcQvG5TTjhrtS+9rw2vXa9zrwkfZ1LwTO8Cm887XnM4VNYSP3N/c79zn3KfcxOyrjAATQ9QP3nD1w9m0PuAC3IKFS2/BMoNKAYRKVTsouwBQqPfR9gBlUBvDMo56GZwHN+196i4roBUQeClgCDsEWfEAGgG6A6JiKULRUsUYFvIzRQeC50CMKbYBBF8nPcBdJhaGO1AVDS0gkseNTEGEkckQTSQQJZbaPmbAwHQi3kymRWLiuUNBlbGWd9YjjKJasuoim4hMSzfFRBceUSULfR4giopNKgMfa71EFs+vWCnz//r3RPP6yFWMsHUFH5/XoHZBUamLyUrbLmR0toqXa3b1vt+8HZcq3qSKj3/+Ul+4nvf4J9FMlejPsPeFScKVwHOP1CeBpxuvpiuefAmB+wnIpeI6O/qOyfGF/B54AgIBoP19g/9ZvYltbYZEClGfsI8B/0M0GIP4iA90UEEhAAoU4QQAAIsEIsD77sWQwxtgjjhBYUk0DCYJAQQ1Al3Mi0h6Ac2AIUecWoaSeENqhyUqjIqwaf8/i9PjXw8DIxUxFQckqz4ghwyY1WWFgoKAlU6XJGj2JGk2WaWnl2V8XW+hlMhYyZnYyUjW28KyJXYWnrfKXMNCzLE1SsNHimfWnYmu0mynIDhIOOLDJTOGFHDF5xKh+w/ov0U45frQWKt2RZ9jAjblL+b2H6vO0RIBZDiMAAAA=);} #mdic-demo{margin:1rem -0.83rem;padding:1rem;font:36px MDIC;color:#abb2bf;background:#282c34;display:flex;justify-content:space-around;flex-wrap:wrap;}</style><div id="mdic-demo"><span>skip_previous</span><span>skip_next</span><span>play_arrow</span><span>pause</span><span>stop</span><span>subdirectory_arrow_right</span><span>repeat_one</span><span>repeat</span><span>shuffle</span><span>keyboard_capslock</span></div>
 
 嗯，效果很不错。这次的教程就到这里，感谢观看！
