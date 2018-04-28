@@ -24,6 +24,21 @@ module.exports = {
             { name: 'Rocka\'s Blog', link: '/' },
             { name: 'About', link: '/about' }
         ],
+        header: {
+            img: [
+                '/assets/header.jpg',
+                '/static/img/header/botany.jpg',
+                '/static/img/header/castle.jpg',
+                '/static/img/header/dew.jpg',
+                '/static/img/header/halo.jpg',
+                '/static/img/header/nep.jpg',
+                '/static/img/header/steve.jpg'
+            ],
+            motto: {
+                upper: 'Talk is cheap',
+                lower: 'Show me the code'
+            }
+        },
         side: [
             {
                 name: 'Links',
@@ -42,9 +57,16 @@ module.exports = {
                 ]
             }
         ],
+        footer: {
+            meta: {
+                copy: true,
+                platform: true,
+                theme: true
+            }
+        },
         isso: {
-            lang: "zh",
-            embed: "https://isso.rocka.me/js/embed.min.js",
+            lang: 'zh',
+            embed: 'https://isso.rocka.me/js/embed.min.js',
             author: true,
             email: true
         }
