@@ -67,6 +67,7 @@ module.exports = {
         isso: {
             lang: 'zh',
             embed: 'https://isso.rocka.me/js/embed.min.js',
+            prefix: 'https://isso.rocka.me/',
             author: true,
             email: true
         }
