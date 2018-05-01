@@ -1,4 +1,8 @@
-const PluginCustomPage = require('@neoblog/plugin-custom-page');
+'use strict';
+
+const CustomPagePlugin = require('@neoblog/plugin-custom-page');
+const RootContentPlugin = require('./plugin/root-content');
+const GitHubWebhookPlugin = require('./plugin/github-webhook');
 
 module.exports = {
     // title of all HTML pages. Cannot be null.
@@ -11,11 +15,15 @@ module.exports = {
     templateDir: './node_modules/@neoblog/template-teal/template',
     // plugins to load. At least an empty array.
     plugins: [
-        new PluginCustomPage({
+        new CustomPagePlugin({
             file: './custom/about.md',
             route: '/about'
         }),
-        require('./plugin/root-content')
+        RootContentPlugin,
+        new GitHubWebhookPlugin({
+            path: '/webhook/github',
+            secret: process.env.WEBHOOK_SECRET
+        })
     ],
     // arguments passed to template. can be anything but null.
     templateArgs: {
