@@ -2,7 +2,7 @@
 
 const CustomPagePlugin = require('@neoblog/plugin-custom-page');
 const RootContentPlugin = require('./plugin/root-content');
-const GitHubWebhookPlugin = require('./plugin/github-webhook');
+const GitHubWebhookPlugin = require('@neoblog/plugin-github-webhook');
 
 module.exports = {
     // title of all HTML pages. Cannot be null.
@@ -21,13 +21,20 @@ module.exports = {
         }),
         RootContentPlugin,
         new GitHubWebhookPlugin({
-            path: '/webhook/github',
             secret: process.env.WEBHOOK_SECRET
         })
     ],
     // arguments passed to template. can be anything but null.
     templateArgs: {
         lang: 'zh',
+        head: {
+            meta: [
+                { name: 'theme-color', content: '#009688' },
+                { httpEquiv: 'content-security-policy', content: `script-src 'self';` }
+            ],
+            link: [],
+            script: []
+        },
         nav: [
             { name: 'Rocka\'s Blog', link: '/' },
             { name: 'About', link: '/about' }
