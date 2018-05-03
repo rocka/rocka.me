@@ -6,7 +6,7 @@ const GitHubWebhookPlugin = require('@neoblog/plugin-github-webhook');
 
 module.exports = {
     // title of all HTML pages. Cannot be null.
-    title: 'Rocka\'s Blog',
+    title: `Rocka's Blog`,
     // local server port. default to `2233` .
     port: 36592,
     // path to article directory. default to `./article` .
@@ -30,13 +30,15 @@ module.exports = {
         head: {
             meta: [
                 { name: 'theme-color', content: '#009688' },
-                { httpEquiv: 'content-security-policy', content: `script-src 'self';` }
+                { httpEquiv: 'content-security-policy', content: `script-src 'self' *.rocka.me rocka.me` }
             ],
             link: [],
-            script: []
+            script: [
+                { src: 'https://rocka.me/static/js/melody-player.polyfill.js', async: true }
+            ]
         },
         nav: [
-            { name: 'Rocka\'s Blog', link: '/' },
+            { name: `Rocka's Blog`, link: '/' },
             { name: 'About', link: '/about' }
         ],
         header: {
@@ -60,7 +62,7 @@ module.exports = {
                 items: [
                     { text: 'Zeeko', link: 'https://gianthard.rocks', target: '_blank' },
                     { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' },
-                    { text: 'Sxyazi\'s', link: 'https://sxyz.blog', target: '_blank' },
+                    { text: `Sxyazi's`, link: 'https://sxyz.blog', target: '_blank' },
                     { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' }
                 ]
             },
