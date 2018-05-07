@@ -14,7 +14,7 @@
 
 上星期又拾起了 [ElectronNCM](https://github.com/Rocket1184/electron-netease-cloud-music) 这个项目，已经是 [一年前](https://github.com/Rocket1184/electron-netease-cloud-music/commit/4279ada36dbf04e7bc2ee999c99f9affe6ccaec3) 的大坑了呢。虽然有断断续续在维护，但当时的架构设计真的很差，好多地方牵一发而动全身。那时还不会用 Webpack ，写了好多代码，但打包之后运行不起来，于是到处查找文档和资料，硬是折腾了一个星期。这也是我第一次用上 CI ，还写了一个 [发布页面](https://ncm-release.dokku.rocka.me/) 用来下载打包好的文件，不过这些都是后话了。现在拾起来，又萌生了重构的想法，架构一定要合理，还要有代码提示。于是选择了 [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) + [Inferno.js](https://www.infernojs.org/docs/guides/typescript-support) ，然后又开始折腾 Webpack 。过几天也许会写一篇关于 Electron 应用打包方式的吐槽吧，或者是 Webpack 使用的经验 ~~踩坑~~ 之谈？这样想着。
 
-说到考研，其实心里是有那么一丝抗拒的。在大学里也没用好好学数学，还以为终于能逃离数学了，然而如果没有坚实的数学技术，恐怕只能做一个蹩脚的 `API Caller` 。我还年轻，~~还没谈过恋爱，~~ 不要成为社畜啊…………
+说到考研，其实心里是有那么一丝抗拒的。在大学里也没用好好学数学，还以为终于能逃离数学了，然而如果没有坚实的数学基础，恐怕只能做一个蹩脚的 `API Caller` 。我还年轻，~~还没谈过恋爱，~~ 不要成为社畜啊…………
 
 但最怵的还是政治，下午去听了“形势与政策”课，教室里坐满了人，老师在讲台上一本正经的胡说八道 ~~输入法自动补全~~ ，我在台下听着头皮发麻。这些话大都伟大光荣正确，但听完之后又没明白到底在讲些什么。考政治是最讨厌的了吧，高考都不考政治。
 
@@ -22,4 +22,4 @@
 
 ~~一年后的我，现在在做什么？~~
 
-~~好想要一个嵌入式的音乐播放器啊，可以适时插入一些应景的 BGM 。轮子预定（~~
+~~好想要一个嵌入式的音乐播放器啊，可以适时插入一些应景的 BGM 。[轮子](http://github.com/rocka/melody-player)预定（~~

@@ -12,9 +12,9 @@
 
 ---
 
-这几天挖了 [新坑 MelodyPlayer](https://github.com/rocka/melody-player) ，其中有用到 Google 的 [Material Icons](http://google.github.io/material-design-icons/#icon-font-for-the-web) 。虽然它的 woff2 格式只有 42KB ，但我只用了其中的 10 个图标，加载整个字体文件显得很不划算。虽然 Material Icons 提供了制作 Sprite 的方案，但只有 SVG 或 CSS Sprite ，而的用法是 `<button>` 里写图标的名字，不能兼容。
+这几天挖了 [新坑 MelodyPlayer](https://github.com/rocka/melody-player) ，其中有用到 Google 的 [Material Icons](http://google.github.io/material-design-icons/#icon-font-for-the-web) 。虽然它的 woff2 格式只有 42KB ，但我只用了其中的 10 个图标，加载整个字体文件显得很不划算。虽然 Material Icons 提供了制作 Sprite 的方案，但只有 SVG 或 CSS Sprite ，我的用法是 `<button>` 里写图标的名字，不能兼容。
 
-而我又不愿意改代码，于是想寻找一种提取字体中特定字符的方法，肯定能大幅减文件小体积。
+我不愿意改代码，于是想寻找一种提取字体中特定字符的方法。
 
 经过一番搜索，找到了 [`fonttools`](https://github.com/fonttools/fonttools) 这个强大的工具，可以精确控制字体文件的每一个 Glyph ，最大限度压缩字体。
 
