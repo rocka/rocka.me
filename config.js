@@ -44,12 +44,12 @@ module.exports = {
         header: {
             img: [
                 '/assets/header.jpg',
-                '/static/img/header/botany.jpg',
                 '/static/img/header/castle.jpg',
                 '/static/img/header/dew.jpg',
-                '/static/img/header/halo.jpg',
                 '/static/img/header/nep.jpg',
-                '/static/img/header/steve.jpg'
+                '/static/img/header/steve.jpg',
+                '/static/img/header/horo1.jpg',
+                '/static/img/header/horo2.jpg'
             ],
             motto: {
                 upper: 'Talk is cheap',
