@@ -63,7 +63,8 @@ module.exports = {
                     { text: 'Zeeko', link: 'https://gianthard.rocks', target: '_blank' },
                     { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' },
                     { text: `Sxyazi's`, link: 'https://sxyz.blog', target: '_blank' },
-                    { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' }
+                    { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' },
+                    { text: 'I/O OVER', link: 'https://ioover.net', target: '_blank' }
                 ]
             },
             {
