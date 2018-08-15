@@ -14,10 +14,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@neoblog/neoblog": "^0.2.5",
+    "@neoblog/neoblog": "^0.2.6",
     "@neoblog/plugin-custom-page": "^0.1.1",
     "@neoblog/plugin-github-webhook": "^1.0.0",
-    "@neoblog/template-teal": "^2.4.0",
+    "@neoblog/template-teal": "^2.4.1",
     "koa-static-cache": "^5.1.2"
   }
 }
