@@ -3,6 +3,7 @@
 const CustomPagePlugin = require('@neoblog/plugin-custom-page');
 const RootContentPlugin = require('./plugin/root-content');
 const GitHubWebhookPlugin = require('@neoblog/plugin-github-webhook');
+const RSSPlugin = require('@neoblog/plugin-rss');
 
 module.exports = {
     // title of all HTML pages. Cannot be null.
@@ -22,6 +23,16 @@ module.exports = {
         RootContentPlugin,
         new GitHubWebhookPlugin({
             secret: process.env.WEBHOOK_SECRET
+        }),
+        new RSSPlugin({
+            limit: 10,
+            route: '/rss',
+            feedOptions: {
+                author: 'Rocka',
+                site_url: 'https://rocka.me',
+                description: 'Talk is cheap, show me the code.',
+                language: 'zh'
+            }
         })
     ],
     // arguments passed to template. can be anything but null.
@@ -64,14 +75,22 @@ module.exports = {
                     { text: 'NeatLine', link: 'http://blog.neatline.cn', target: '_blank' },
                     { text: `Sxyazi's`, link: 'https://sxyz.blog', target: '_blank' },
                     { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' },
-                    { text: 'I/O OVER', link: 'https://ioover.net', target: '_blank' }
+                    { text: 'I/O OVER', link: 'https://ioover.net', target: '_blank' },
+                    { text: 'jijiwuming', link: 'https://www.jijiwuming.cn/', target: '_blank' }
                 ]
             },
             {
-                name: 'Server Info',
+                name: 'Tags',
                 items: [
-                    { text: `OS: ${process.platform} ${process.arch}` },
-                    { text: `Node: ${process.version}` }
+                    { text: 'Linux', link: '/tag/Linux' },
+                    { text: '碎碎念', link: '/tag/碎碎念' },
+                    { text: '前端', link: '/tag/前端' }
+                ]
+            },
+            {
+                name: 'Subscribe',
+                items: [
+                    { text: 'RSS', link: '/rss' },
                 ]
             }
         ],
