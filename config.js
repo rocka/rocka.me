@@ -49,8 +49,8 @@ module.exports = {
             ]
         },
         nav: [
-            { name: `Rocka's Blog`, link: '/' },
-            { name: 'About', link: '/about' }
+            { text: `Rocka's Blog`, attr: { href: '/' } },
+            { text: 'About', attr: { href: '/about' } }
         ],
         header: {
             img: [
@@ -71,26 +71,27 @@ module.exports = {
             {
                 name: 'Links',
                 items: [
-                    { text: 'Zeeko', link: 'https://gianthard.rocks', target: '_blank' },
-                    { text: 'Scrap station', link: 'https://jolyne.club', target: '_blank' },
-                    { text: `Sxyazi's`, link: 'https://sxyz.blog', target: '_blank' },
-                    { text: 'FGHRSH', link: 'https://www.fghrsh.net', target: '_blank' },
-                    { text: 'I/O OVER', link: 'https://ioover.net', target: '_blank' },
-                    { text: 'jijiwuming', link: 'https://www.jijiwuming.cn', target: '_blank' }
+                    { text: 'Zeeko', attr: { href: 'https://gianthard.rocks', target: '_blank' } },
+                    { text: 'Scrap station', attr: { href: 'https://jolyne.club', target: '_blank' } },
+                    { text: `Sxyazi's`, attr: { href: 'https://sxyz.blog', target: '_blank' } },
+                    { text: 'FGHRSH', attr: { href: 'https://www.fghrsh.net', target: '_blank' } },
+                    { text: 'I/O OVER', attr: { href: 'https://ioover.net', target: '_blank' } },
+                    { text: 'jijiwuming', attr: { href: 'https://www.jijiwuming.cn', target: '_blank' } }
                 ]
             },
             {
                 name: 'Tags',
                 items: [
-                    { text: 'Linux', link: '/tag/Linux' },
-                    { text: '碎碎念', link: '/tag/碎碎念' },
-                    { text: '前端', link: '/tag/前端' }
+                    { text: 'Linux', attr: { href: '/tag/Linux' } },
+                    { text: '碎碎念', attr: { href: '/tag/碎碎念' } },
+                    { text: '前端', attr: { href: '/tag/前端' } }
                 ]
             },
             {
                 name: 'Subscribe',
                 items: [
-                    { text: 'RSS', link: '/rss' },
+                    { text: 'RSS', attr: { rel: "alternate", type: "application/rss+xml", href: "https://rocka.me/rss" } },
+                    { text: "Mastodon", attr: { rel: "me", href: "https://sn.angry.im/@Rocka", target: '_blank' } },
                 ]
             }
         ],
