@@ -13,7 +13,8 @@
 #### 四级标题
 
 >这是引用
-引用的第二行
+>
+>引用的第二行
 
 ![必应美图 2016-10-04](https://rocka.me/static/img/NASABahamas.jpg)
 
@@ -34,6 +35,7 @@ let s = function name(params) {
 
 最后是一个`HTML`语法书写的表格：
 
+<div class="table-wrapper">
 <table>
 <thead>
 <tr>
@@ -50,3 +52,4 @@ let s = function name(params) {
 </tr>
 </tbody>
 </table>
+<div class="table-wrapper">
