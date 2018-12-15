@@ -57,10 +57,15 @@ module.exports = {
                 '/assets/header.jpg',
                 '/static/img/header/castle.jpg',
                 '/static/img/header/dew.jpg',
-                '/static/img/header/nep.jpg',
                 '/static/img/header/steve.jpg',
                 '/static/img/header/horo1.jpg',
-                '/static/img/header/horo2.jpg'
+                '/static/img/header/AzurLane-Neptunia.jpg',
+                '/static/img/header/ten_o_yowa.jpg',
+                '/static/img/header/shine.jpg',
+                '/static/img/header/ROLLING_GIRL-8BIT.jpg',
+                '/static/img/header/PLASMA_ULTIMATE.jpg',
+                '/static/img/header/firewatch-tower.jpg',
+                '/static/img/header/Reimu.jpg',
             ],
             motto: {
                 upper: 'Talk is cheap',
