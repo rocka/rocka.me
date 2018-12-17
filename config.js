@@ -45,7 +45,8 @@ module.exports = {
             ],
             link: [],
             script: [
-                { src: 'https://rocka.me/static/js/melody-player.polyfill.js', async: true }
+                { src: 'https://rocka.me/static/js/melody-player.polyfill.js', async: true },
+                { src: 'https://rocka.me/static/js/fathom.js.js', async: true }
             ]
         },
         nav: [
@@ -62,10 +63,8 @@ module.exports = {
                 '/static/img/header/AzurLane-Neptunia.jpg',
                 '/static/img/header/ten_o_yowa.jpg',
                 '/static/img/header/shine.jpg',
-                '/static/img/header/ROLLING_GIRL-8BIT.jpg',
                 '/static/img/header/PLASMA_ULTIMATE.jpg',
-                '/static/img/header/firewatch-tower.jpg',
-                '/static/img/header/Reimu.jpg',
+                '/static/img/header/firewatch-tower.jpg'
             ],
             motto: {
                 upper: 'Talk is cheap',
