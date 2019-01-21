@@ -46,7 +46,7 @@ module.exports = {
             link: [],
             script: [
                 { src: 'https://rocka.me/static/js/melody-player.polyfill.js', async: true },
-                { src: 'https://rocka.me/static/js/fathom.js.js', async: true }
+                { src: 'https://rocka.me/static/js/fathom.js', async: true }
             ]
         },
         nav: [
