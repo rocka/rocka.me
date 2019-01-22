@@ -34,7 +34,7 @@ watch: {
 
 所以 `vue-router` 就真的没有一个导航栈吗？还真就没有。甚至还在 GitHub 上找到了一个 [6012 年的上古 Issue][4] ，然后惊奇地发现它被列在了 Todo in 3.x 中。
 
-怎么办？`vue-router` 提供了一个 [`abstract` 模式][5]，由数组保存所经过的路由，可以由 `$router.history.stack` 访问到。具体的细节可以参见[源码](6)。感觉这本来是提供给没有 浏览器 API 的 SSR 环境用的，不过这里也可以适用。不过有个缺点：使用 `abstract` 模式后，任何的路由变化都不会体现在地址栏上， URL 将不会有任何变化。~~反正 Electron 本来就看不见地址栏~~
+怎么办？`vue-router` 提供了一个 [`abstract` 模式][5]，由数组保存所经过的路由，可以由 `$router.history.stack` 访问到。具体的细节可以参见[源码][6]。感觉这本来是提供给没有 浏览器 API 的 SSR 环境用的，不过这里也可以适用。不过有个缺点：使用 `abstract` 模式后，任何的路由变化都不会体现在地址栏上， URL 将不会有任何变化。~~反正 Electron 本来就看不见地址栏~~
 
 至于实现，请看[这个 fiddle][7] 。值得注意的是，`abstract` 模式的 `vue-router` 在使用前需要先手动 `push` 一个路由进去，否则路径会是空的。
 
@@ -48,12 +48,14 @@ watch: {
 
 好了，不多说，该睡了。
 
+---
+
 ## 参考
 
 1. https://markus.oberlehner.net/blog/vue-router-page-transitions/
 
 [1]: https://router.vuejs.org/guide/advanced/transitions.html#route-based-dynamic-transition
-[2]:https://github.com/Rocket1184/electron-netease-cloud-music
+[2]: https://github.com/Rocket1184/electron-netease-cloud-music
 [3]: https://jsfiddle.net/Rocka/d9vqn3ko/3/
 [4]: https://github.com/vuejs/vue-router/issues/883
 [5]: https://router.vuejs.org/api/#mode
