@@ -12,4 +12,4 @@
 
 葬礼这天，风很大。
 
-<p style="text-align: right;"><a>- 未完待续 -</a></p>
+<p class="more"><a>- 未完待续 -</a></p>
