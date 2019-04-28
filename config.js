@@ -43,10 +43,12 @@ module.exports = {
                 { name: 'theme-color', content: '#009688' },
                 { httpEquiv: 'content-security-policy', content: `script-src 'self' *.rocka.me rocka.me` }
             ],
-            link: [],
+            link: [
+                { rel: 'stylesheet', href: '/static/js/melody-player/dist/preload.css' }
+            ],
             script: [
-                { src: 'https://rocka.me/static/js/melody-player.polyfill.js', async: true },
-                { src: 'https://rocka.me/static/js/fathom.js', async: true }
+                { src: '/static/js/melody-player/dist/player.min.js', async: true },
+                { src: '/static/js/fathom.js', async: true }
             ]
         },
         nav: [
