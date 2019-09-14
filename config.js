@@ -28,10 +28,12 @@ module.exports = {
             limit: 10,
             route: '/rss',
             feedOptions: {
-                author: 'Rocka',
                 site_url: 'https://rocka.me',
                 description: 'Talk is cheap, show me the code.',
                 language: 'zh'
+            },
+            itemOptions: {
+                author: 'Rocka'
             }
         })
     ],
