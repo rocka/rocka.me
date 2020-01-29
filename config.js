@@ -80,11 +80,11 @@ module.exports = {
                 name: 'Links',
                 items: [
                     { text: 'Zeeko', attr: { href: 'https://gianthard.rocks', target: '_blank' } },
-                    { text: 'Scrap station', attr: { href: 'https://jolyne.club', target: '_blank' } },
+                    // { text: 'Scrap station', attr: { href: 'https://jolyne.club', target: '_blank' } },
                     { text: `Sxyazi's`, attr: { href: 'https://sxyz.blog', target: '_blank' } },
                     { text: 'FGHRSH', attr: { href: 'https://www.fghrsh.net', target: '_blank' } },
                     { text: 'I/O OVER', attr: { href: 'https://ioover.net', target: '_blank' } },
-                    { text: 'jijiwuming', attr: { href: 'https://www.jijiwuming.cn', target: '_blank' } }
+                    // { text: 'jijiwuming', attr: { href: 'https://www.jijiwuming.cn', target: '_blank' } }
                 ]
             },
             {
