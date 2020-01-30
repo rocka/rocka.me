@@ -93,18 +93,18 @@ function a_auu_a_c(str) {
 
 ```js
 function a_auu_a_d(str) {
-    let bytes = Buffer.from(str, 'utf8')
-    let len = bytes.length;
+    const key = Buffer.from('Encrypt', 'utf8');
+    const bytes = Buffer.from(str, 'utf8');
     let i = 0, j = 0;
-    while (j < len) {
-        if (i >= 7) {
+    while (j < bytes.length) {
+        if (i >= key.length) {
             i = 0;
         }
-        bytes[j] = bytes[j] ^ key[i]
-        j++
-        i++
+        bytes[j] = bytes[j] ^ key[i];
+        j++;
+        i++;
     }
-    return bytes.toString('base64')
+    return bytes.toString('base64');
 }
 ```
 
@@ -266,7 +266,7 @@ public class a {
 const crypto = require('crypto');
 function a(str) {
     const cipher = crypto.createCipheriv('aes-128-ecb', ')(13daqP@ssw0rd~', null);
-    return cipher.update(text, 'utf8') + cipher.final(); // returns Buffer
+    return cipher.update(str, 'utf8') + cipher.final(); // returns Buffer
 }
 ```
 
@@ -330,7 +330,7 @@ console.log(getCacheKey(body));
 2. https://juejin.im/post/5b1b6e4b6fb9a01e87569e96
 
 [1]: https://github.com/Rocket1184/electron-netease-cloud-music
-[2]:https://github.com/Konloch/bytecode-viewer
+[2]: https://github.com/Konloch/bytecode-viewer
 [3]: https://github.com/AlexeySoshin/smali2java
 [4]: https://soft.shouji.com.cn/down/25231.html
 [5]: https://docs.oracle.com/javase/7/docs/technotes/guides/security/crypto/CryptoSpec.html#transformation
