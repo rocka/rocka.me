@@ -11,6 +11,29 @@ tags:
 
 ![智障电视的默认桌面](https://rocka.me/static/img/Screenshot_2020-02-03-21-05-31.png)
 
+## TL;DR
+
+1. 开启 TCL 电视的 adb ，可以看下一节，不长。
+
+2. 解除 TCL 电视的 adb/pm install 安装限制：进入 adb shell 后，使用 `tclsu` 取得 root shell ，然后执行
+
+```shell
+# setprop persist.tcl.installapk.enable 1
+# setprop persist.tcl.debug.installapk 1
+```
+
+3. 给 TCL 电视安装第三方 Launcher ：进入 root shell 后，执行
+
+```shell
+# mount -o remount,rw /system
+```
+
+挂载 system 分区为可写，新建 /system/app/<应用名称> 目录，权限为 0755 ；再将 apk 文件复制到刚才的目录中，权限为 0644 。
+
+4. TCL 电视就是智障，千万别买
+
+以下是正文。
+
 ## 开启 adb
 
 如果你上网搜索“TCL 电视 adb”这个几个关键词，会发现很多所谓的“教程”。但中文互联网的魅力就在于此，大部分搜索结果都是 SEO 垃圾站对某些论坛中帖子的无署名转载，而另一部分是 SEO 垃圾站的互相转载。如果你打开一些论坛中所谓“置顶教程”，又会发现“游客，该内容只有回复后才可以浏览”。然而注册这些论坛无一不需要手机号，而新注册的用户也不一定马上就能发表回复。
@@ -18,12 +41,13 @@ tags:
 经过漫无目的搜索，不断更改搜索关键词，终于找到了一个[有效的教程][1]：
 
 - 打开电视，进入直播，选择 TV 信源
-- 按遥控器上的“设置“按钮，进入显示 -> 高级设定，然后把焦点移动在“对比度”上，但不要进入
-- 快速依次按下遥控器上的 `1`  `9`  `5`  `0` 数字键，稍等几秒后便会打开”Main menu/Factory“工厂模式菜单 <sup>1</sup> <sup>2</sup>
+- 按遥控器上的“设置”按钮，进入显示 -> 高级设定，然后把焦点移动在“对比度”上，但不要进入
+- 快速依次按下遥控器上的 `1`  `9`  `5`  `0` 数字键，稍等几秒后便会打开“Main menu/Factory”工厂模式菜单 <sup>1</sup> <sup>2</sup>
 - 选择 Other -> ADB ，按下遥控器中的 OK 键将其从 OFF 改为 ON
 
-> 1. 但是这个智障电视的遥控器上并没有数字键。在电视背面的 USB 接口上接一个键盘，然后按字母键盘上方的那一排数字键也可以。不要按数字小键盘，那些按键被映射为了方向键，但也许是我没打开 Number Lock ？
-> 2. 有些教程中的按键顺序为 `9` `7` `3` `5`  ，虽然这样也能打开一个类似界面的菜单，但并不能启用 adb 。可能是因为型号不同？不过在这里也记录一下。
+> <sup>1</sup> 但是这个智障电视的遥控器上并没有数字键。在电视背面的 USB 接口上接一个键盘，然后按字母键盘上方的那一排数字键也可以。不要按数字小键盘，那些按键被映射为了方向键，但也许是我没打开 Number Lock ？
+>
+> <sup>2</sup> 有些教程中的按键顺序为 `9` `7` `3` `5`  ，虽然这样也能打开一个类似界面的菜单，但并不能启用 adb 。可能是因为型号不同？不过在这里也记录一下。
 
 ![操作图示](https://rocka.me/static/img/Screenshot_2020-02-03-21-07-31.jpg)
 
@@ -31,7 +55,7 @@ tags:
 
 ```shell
 $ adb connect $TV_IP_ADDR:5555
-connected to xx.xx.xx.xx:5555
+connected to xxx.xxx.xx.x:5555
 ```
 
 ## 手动安装 SuperSU
@@ -46,7 +70,7 @@ connected to xx.xx.xx.xx:5555
 
 再看这个智障电视，它真的有 recovery 吗 ... 但既然现在已经有了 root shell ，那 SuperSU 的刷机脚本中能做到的事，这里应该也能做到 ... 顺着这个思路，下载了 [SuperSU 的卡刷包][su]，并解压出来。
 
-```
+```plain
 .
 ├── LICENSE
 ├── META-INF
@@ -72,90 +96,28 @@ connected to xx.xx.xx.xx:5555
 
 打开 [update-binary 文件][ub]，注释中详细说明了 SuperSU 正常工作所需的文件，以及安装的位置及权限。那么接下来，只要按照这个步骤，手工把所有的文件依次放好，应该就可以了 ...
 
-这台智障电视的 CPU 是 arm64 架构的，运行 Android 5.0.1 API Level 21 ，显然应该选择 arm64 子目录中的文件。然后再对照注释，找到每个文件的安装位置以及权限等信息：
+这台智障电视的 CPU 是 arm64 架构，运行 Android 5.0.1 API Level 21 ，显然应该选择 arm64 子目录中的文件。然后再对照注释，找到每个文件的安装位置以及权限等信息：
 
 <table>
 <thead>
-<tr>
-<th>source</th>
-<th>target</th>
-<th>chmod</th>
-<th>chcon</th>
-</tr>
+<tr><th>source</th>                               <th>target</th>                            <th>chmod</th>   <th>chcon</th></tr>
 </thead>
-<tbody><tr>
-<td>common/Superuser.apk</td>
-<td>/system/app/SuperSU/SuperSU.apk</td>
-<td>0644</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>common/install-recovery.sh</td>
-<td>/system/etc/install-recovery.sh</td>
-<td>0755</td>
-<td>u:object_r:toolbox_exec:s0</td>
-</tr>
-<tr>
-<td>(N/A)</td>
-<td>/system/bin/install-recovery.sh</td>
-<td colspan="2">(symlink to /system/etc/install-recovery.sh)</td>
-</tr>
-<tr>
-<td rowspan="3">su</td>
-<td>/system/xbin/su</td>
-<td>0755</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>/system/bin/.ext/.su</td>
-<td>0755</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>/system/xbin/daemonsu</td>
-<td>0755</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>supolicy</td>
-<td>/system/xbin/supolicy</td>
-<td>0755</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>libsupol.so</td>
-<td>/system/lib64/libsupol.so</td>
-<td>0644</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td rowspan="2">/system/bin/app_process64</td>
-<td>/system/bin/app_process64_original</td>
-<td>0755</td>
-<td>u:object_r:zygote_exec:s0</td>
-</tr>
-<tr>
-<td>/system/bin/app_process_init</td>
-<td>0755</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-<tr>
-<td>(N/A)</td>
-<td>/system/bin/app_process</td>
-<td colspan="2">(symlink to /system/xbin/daemonsu)</td>
-</tr>
-<tr>
-<td>(N/A)</td>
-<td>/system/bin/app_process64</td>
-<td colspan="2">(symlink to /system/xbin/daemonsu)</td colspan="2">
-</tr>
-<tr>
-<td>(new empty file)</td>
-<td>/system/etc/.installed_su_daemon</td>
-<td>0644</td>
-<td>u:object_r:system_file:s0</td>
-</tr>
-</tbody></table>
+<tbody>
+<tr><td>common/Superuser.apk</td>                 <td>/system/app/SuperSU/SuperSU.apk</td>   <td>0644</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr><td>common/install-recovery.sh</td>           <td>/system/etc/install-recovery.sh</td>   <td>0755</td>    <td>u:object_r:toolbox_exec:s0</td></tr>
+<tr><td>(N/A)</td>                                <td>/system/bin/install-recovery.sh</td>   <td colspan="2">(symlink to /system/etc/install-recovery.sh)</td></tr>
+<tr><td rowspan="3">su</td>                       <td>/system/xbin/su</td>                   <td>0755</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr>                                              <td>/system/bin/.ext/.su</td>              <td>0755</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr>                                              <td>/system/xbin/daemonsu</td>             <td>0755</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr><td>supolicy</td>                             <td>/system/xbin/supolicy</td>             <td>0755</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr><td>libsupol.so</td>                          <td>/system/lib64/libsupol.so</td>         <td>0644</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr><td rowspan="2">/system/bin/app_process64</td><td>/system/bin/app_process64_original</td><td>0755</td>    <td>u:object_r:zygote_exec:s0</td></tr>
+<tr>                                              <td>/system/bin/app_process_init</td>      <td>0755</td>    <td>u:object_r:system_file:s0</td></tr>
+<tr><td>(N/A)</td>                                <td>/system/bin/app_process</td>           <td colspan="2">(symlink to /system/xbin/daemonsu)</td></tr>
+<tr><td>(N/A)</td>                                <td>/system/bin/app_process64</td>         <td colspan="2">(symlink to /system/xbin/daemonsu)</td></tr>
+<tr><td>(new empty file)</td>                     <td>/system/etc/.installed_su_daemon</td>  <td>0644</td>    <td>u:object_r:system_file:s0</td></tr>
+</tbody>
+</table>
 
 向系统中安装文件时，会遇到 read-only file system 的报错，重新 mount 一下就可以了。
 
@@ -163,7 +125,11 @@ connected to xx.xx.xx.xx:5555
 # mount -o remount,rw /system
 ```
 
-所有文件都安装到对应的位置后，再仔细检查一遍权限以及 SELinux security context 是否正确，可以用 `ls -lZ` 一并列出这些信息。这里要注意，新创建的文件，如果没有用 `chcon` 指定过任何 context ，那就是没有 ... 所以每个文件都要正确设定。
+所有文件都安装到对应的位置后，再仔细检查一遍权限以及 SELinux security context 是否正确，可以用 `ls -lZ` 一并列出这些信息。这里要注意，新创建的文件，如果没有用 `chcon` 指定过任何 context ，那就是没有 ... 所以每个文件都要正确设定。检查无误后，执行
+
+```shell
+# /system/xbin/su --install
+```
 
 然后重启。如果前面的步骤没出错的话， SuperSU 应该已经安装成功，并正能常接管其他应用的 root 权限申请。
 
@@ -176,13 +142,13 @@ connected to xx.xx.xx.xx:5555
 为了验证这一点，我决定反编译一下这个智障。在 adb shell 中找到 /system/app/PacageInstaller ，发现里面除了 apk ，还有一个同名的 odex 文件。这时候就需要 [oat2dex][2] 了：
 
 ```shell
-$ adb pull /system/app/PackageInstaller/PackageInstaller.odex pi.odex
+$ adb pull /system/priv-app/PackageInstaller/arm64/PackageInstaller.odex pi.odex
 /system/priv-app/PackageInstaller...1 file pulled.
 $ java -jar ./oat2dex.jar odex pi.odex
 Output raw dex: /tmp/PackageInstaller.dex
 ```
 
-使用 bytecode-viewer 打开 dex 文件，打开 com/android/packageinstaller/PackageInstallerActivity.class ，很快找到了这一段代码：
+使用 bytecode-viewer 打开 dex 文件，反编译 com/android/packageinstaller/PackageInstallerActivity.class ，很快找到了这一段代码：
 
 ```java
 // JADX
@@ -315,7 +281,7 @@ $ getprop | grep tcl
 
 ## 智障电视就是智障电视
 
-费了这么大劲解除了安装 apk 的限制，赶紧装个第三方 Launcher ，智障电视的默认桌面真的太智障了，又慢又丑，广告还特别多。经过一番搜索，找到一个[去广告版的当贝桌面][3]，准备安装。
+费了这么大劲解除了安装 apk 的限制，赶紧装个第三方 Launcher ，智障电视的默认桌面真的太智障了，又慢又丑，广告还特别多。经过一番搜索，找到一个[当贝桌面 2.3.1 去广告版][3]，准备安装。
 
 > 分享链接来源是[这里](https://www.znds.com/tv-1134460-1-1.html)，但这篇帖子也已经被各种垃圾 SEO 站与营销号转载了很多遍，我也不确定真正的来源到底是哪里。至少上面这篇是我能找到的时间最靠前的。修改版应用的最早出处应该是[这里](https://www.znds.com/tv-1116957-1-1.html)？但原帖的楼主也说他是转载的 ...不管怎么说，向原作者表示感谢。
 >
@@ -378,7 +344,7 @@ public final class Pm {
 }
 ```
 
-但它并没有在这里被实例化，而是一个 Service 。
+它并没有在这里被实例化，只是一个 Service 。
 
 再找到把错误代码转换为字符串的 installFailureToString 方法：
 
@@ -444,7 +410,7 @@ public abstract class PackageManager {
 }
 ```
 
-但 `PackageManager` 却是个抽象类，并没有安装过程的实现。经过一番 Google ，在[爆栈网][4]上找到了相关的问题。PackageManager 代码实现的位置，在 /services/core/java/com/android/server/pm/PackageManagerService.java 。
+但 `PackageManager` 是个抽象类，没有安装过程的实现。经过一番 Google ，在[爆栈网][4]上找到了相关的问题。PackageManager 代码实现的位置，在 /services/core/java/com/android/server/pm/PackageManagerService.java 。
 
 提取智障电视的 services.odex ，然后转换为 dex ：
 
@@ -455,7 +421,7 @@ $ java -jar ./oat2dex.jar odex services.odex
 Output raw dex: /tmp/fw/services.dex
 ```
 
-使用 `jadx-gui --show-bad-code` 启动 jadx ，并打开 services.dex 文件；因为如果不加参数， jadx 会因为出现部分错误，视整个方法为反编译失败，只能看到 smali 。然后直接搜索错误代码 `-104` ，一下就找到了这一段：
+使用 `jadx-gui --show-bad-code` 启动 [jadx][jadx] ，并打开 services.dex 文件；如果不加参数， jadx 会因为出现部分错误，视整个方法为反编译失败，只能看到 smali 。然后直接搜索错误代码 `-104` ，一下就找到了这一段：
 
 ```java
 public void installPackageLI(InstallArgs args, PackageInstalledInfo res) {
@@ -563,13 +529,13 @@ private boolean isTclLauncher(PackageParser.Package pkg) {
 
 先读取 prop 值 sys.currentlauncher ，如果读不到就 fallback 到“公司.太差了.赛博用户界面”，如果还是没有，再次 fallback 到 com.android.providers.settings ，如果还是没有，就直接禁止安装 Launcher ！
 
-那如何才能跟随历史的进程，通过智障电视的研究决定，成为认证的“赛博用户界面“呢？也没有什么别的，大概三件事：一个，签名要一致；第二个，要包含 com.tcl.app.type 这项 MetaData ；第三个， MetaData 的值必须是 com.tcl.ui 。~~什么？你说还有一点？没了没了 ...~~
+那如何才能跟随历史的进程，通过智障电视的研究决定，成为认证的“赛博用户界面”呢？也没有什么别的，大概三件事：一个，签名要一致；第二个，要包含 com.tcl.app.type 这项 MetaData ；第三个， MetaData 的值必须是 com.tcl.ui 。~~什么？你说还有一点？没了没了 ...~~
 
 看来，这还是一个有底线的智障电视，绝对不会让人通过正常的方式安装 Launcher 。如果连这个底线都突破了，那还算什么智障电视！
 
 ## 安装第三方 Launcher 为系统应用
 
-所以到底怎么才能强行安装第三方 Launcher 呢？根据前面安装 SuperSU 的过程，也很简单：在 /system/app 中创建一个新目录，权限为 755 ；再把 apk 复制到刚才的目录里，权限为 644 ；然后 chcon 为 u:object_r:system_file:s0 ；重启；就完事了 ...
+所以到底怎么才能强行安装第三方 Launcher 呢？根据前面安装 SuperSU 的过程，也很简单：在 /system/app 中创建一个新目录，权限为 755 ；再把 apk 复制到刚才的目录里，权限为 644 ；然后 `chcon` 为 u:object_r:system_file:s0 ；最后重启；就完事了 ...
 
 ## 后记
 
@@ -596,3 +562,4 @@ private boolean isTclLauncher(PackageParser.Package pkg) {
 [3]: https://www.lanzous.com/i2z7ywf
 [4]: https://stackoverflow.com/a/56646488/8370777
 [5]: https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-5.0.1_r1/core/java/android/content/pm/PackageManager.java
+[jadx]: https://github.com/skylot/jadx
