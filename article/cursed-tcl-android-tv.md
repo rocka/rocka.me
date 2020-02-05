@@ -30,7 +30,7 @@ tags:
 
 挂载 system 分区为可写，新建 /system/app/<应用名称> 目录，权限为 0755 ；再将 apk 文件复制到刚才的目录中，权限为 0644 。
 
-4. TCL 电视就是智障，千万别买
+4. TCL 电视就是智障，千万别买。
 
 以下是正文。
 
@@ -98,7 +98,7 @@ connected to xxx.xxx.xx.x:5555
 
 这台智障电视的 CPU 是 arm64 架构，运行 Android 5.0.1 API Level 21 ，显然应该选择 arm64 子目录中的文件。然后再对照注释，找到每个文件的安装位置以及权限等信息：
 
-<table>
+<div class="table-wrapper"><table>
 <thead>
 <tr><th>source</th>                               <th>target</th>                            <th>chmod</th>   <th>chcon</th></tr>
 </thead>
@@ -117,7 +117,7 @@ connected to xxx.xxx.xx.x:5555
 <tr><td>(N/A)</td>                                <td>/system/bin/app_process64</td>         <td colspan="2">(symlink to /system/xbin/daemonsu)</td></tr>
 <tr><td>(new empty file)</td>                     <td>/system/etc/.installed_su_daemon</td>  <td>0644</td>    <td>u:object_r:system_file:s0</td></tr>
 </tbody>
-</table>
+</table></div>
 
 向系统中安装文件时，会遇到 read-only file system 的报错，重新 mount 一下就可以了。
 
