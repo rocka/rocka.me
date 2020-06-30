@@ -109,4 +109,3 @@ Office 365 订阅用户，但使用频率很低，主要用来往 OneDrive 同�
 - GitHub: [@rocka](https://github.com/rocka)
 - Twitter: [@Rocket1184](https://twitter.com/rocket1184)
 - Mastodon: [Rocka@sn.angry.im](https://sn.angry.im/@Rocka)
-- Weibo: [@Rocket1184](https://weibo.com/u/2353697613)

@@ -98,8 +98,8 @@ module.exports = {
             {
                 name: 'Subscribe',
                 items: [
-                    { text: 'RSS', attr: { rel: "alternate", type: "application/rss+xml", href: "https://rocka.me/rss" } },
-                    { text: "Mastodon", attr: { rel: "me", href: "https://sn.angry.im/@Rocka", target: '_blank' } },
+                    { text: 'RSS', attr: { rel: 'alternate', type: 'application/rss+xml', href: 'https://rocka.me/rss' } },
+                    { text: 'Mastodon', attr: { rel: 'me', href: 'https://sn.angry.im/@Rocka', target: '_blank' } },
                 ]
             }
         ],
