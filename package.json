@@ -19,6 +19,6 @@
     "@neoblog/plugin-github-webhook": "^1.0.0",
     "@neoblog/plugin-rss": "^0.3.0",
     "@neoblog/template-teal": "^3.1.3",
-    "koa-static-cache": "^5.1.2"
+    "koa-static-cache": "^5.1.4"
   }
 }
