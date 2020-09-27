@@ -11,9 +11,11 @@ Telegram Desktop 在 [v1.5.8](https://desktop.telegram.org/changelog#v-1-5-8-21-
 
 ![没有一个好看的](https://rocka.me/static/img/Screenshot_20190324_220928.png)
 
-稍微翻了一下 Telegram 的数据目录，发现下载的 Emoji 都保存在  `~/.local/share/TelegramDesktop/tdata/emoji` 这个目录下，而且都是以 Spirte 图片的形式存储的。于是我们就有丰富的 hack 空间啦！
+稍微翻了一下 Telegram 的数据目录，发现下载的 Emoji 都保存在  ~/.local/share/TelegramDesktop/tdata/emoji 这个目录下，而且都是以 Spirte 图片的形式存储的。于是我们就有丰富的 hack 空间啦！
 
 我知道没有人喜欢看这些罗里巴嗦的步骤，所以把下载链接[先放在这里](https://rocka.me/static/file/telegram-blobmoji.7z)。
+
+> **UPDATE:** Telegram Desktop 在 [v2.1.3](https://desktop.telegram.org/changelog#v-2-1-3-08-05-20) 版本中新增了对 Emoji 12.1 的支持，所以之前的 Sprite 失效了。虽然 Blobmoji 并没有完全覆盖，但总比没有要好 ... [新版（v2）下载连接在这里](https://rocka.me/static/file/telegram-blobmoji-v2.7z)。(2020/09/27)
 
 <!-- more -->
 
