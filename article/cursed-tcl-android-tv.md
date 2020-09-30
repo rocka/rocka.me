@@ -139,7 +139,7 @@ connected to xxx.xxx.xx.x:5555
 
 现在有了 root 权限，但在智障电视上安装应用仍然是个问题。虽然智障电视自带了文件管理器，但并不能直接打开 apk 文件，它会说不支持。通过自带的“电视卫士”，可以安装 U 盘上的 apk 文件，但不能从内置存储安装 apk ... 怎么想都太智障了吧。通过这个方法安装的应用，如果自带更新功能，那下载完 apk 后，又可以通过 Android 标准的 软件包安装程序/PackageInstaller 升级自己。所以这个 PackageInstaller 应该是被魔改过的，只允许升级，而不允许安装新的应用。
 
-为了验证这一点，我决定反编译一下这个智障。在 adb shell 中找到 /system/app/PacageInstaller ，发现里面除了 apk ，还有一个同名的 odex 文件。这时候就需要 [oat2dex][2] 了：
+为了验证这一点，我决定反编译一下这个智障。在 adb shell 中找到 /system/app/PackageInstaller ，发现里面除了 apk ，还有一个同名的 odex 文件。这时候就需要 [oat2dex][2] 了：
 
 ```shell
 $ adb pull /system/priv-app/PackageInstaller/arm64/PackageInstaller.odex pi.odex
@@ -292,7 +292,7 @@ $ getprop | grep tcl
 ```shell
 $ adb install dbzm.apk
 Performing Push Install
-wdlauncher.apk: 1 file pushed.
+dbzm.apk: 1 file pushed.
         pkg: /data/local/tmp/dbzm.apk
 install apk has be enabled from pm by user!
 Failure [INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES]
@@ -300,7 +300,7 @@ Failure [INSTALL_PARSE_FAILED_INCONSISTENT_CERTIFICATES]
 
 证书冲突？可是智障电视根本就没有预装当贝桌面啊 ... 又尝试安装了几个其他桌面，甚至手机用的 Launcher ，均报错证书冲突。
 
-毫无疑问，这部分肯定也被魔改过了。继续上一步的代码， runInstall 方法被省略的安装过程，是这样的：
+毫无疑问，这部分肯定也被魔改过了。继续上一步的代码， `runInstall` 方法被省略的安装过程，是这样的：
 
 ```java
 try {
@@ -346,7 +346,7 @@ public final class Pm {
 
 它并没有在这里被实例化，只是一个 Service 。
 
-再找到把错误代码转换为字符串的 installFailureToString 方法：
+再找到把错误代码转换为字符串的 `installFailureToString` 方法：
 
 ```java
 package com.android.commands.pm;
@@ -389,7 +389,7 @@ public final class Pm {
 }
 ```
 
-取了 `PackageManager` 类的所有的 `Integer` 字段，与安装过程的 result 进行对比，如果相等，就取出字段名作为错误信息。
+取了 `PackageManager` 类的所有的 `Integer` 字段，与安装的 `result` 进行对比，如果相等，就取出字段名作为错误信息。
 
 去翻了一下 [AOSP 的 android-5.0.1_r1][5] ，找到了错误代码的定义：
 
@@ -410,7 +410,7 @@ public abstract class PackageManager {
 }
 ```
 
-但 `PackageManager` 是个抽象类，没有安装过程的实现。经过一番 Google ，在[爆栈网][4]上找到了相关的问题。PackageManager 代码实现的位置，在 /services/core/java/com/android/server/pm/PackageManagerService.java 。
+但 `PackageManager` 是个抽象类，没有安装过程的实现。经过一番 Google ，在[爆栈网][4]上找到了相关的问题。它的具体实现，在 /services/core/java/com/android/server/pm/PackageManagerService.java 。
 
 提取智障电视的 services.odex ，然后转换为 dex ：
 
