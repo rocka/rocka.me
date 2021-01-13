@@ -549,11 +549,11 @@ private boolean isTclLauncher(PackageParser.Package pkg) {
 
 ## 参考
 
-1. https://blog.fyun.org/tcl-root.html
-2. https://github.com/zyonbao/Brevent/blob/a9e6ee9e681735c51f5a49247c101bf09ea412f8/aosp/README.md
-3. https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-5.0.1_r1
-4. https://stackoverflow.com/a/43390073
-5. [https://www.hmoegirl.com/蛤三篇#原文_2](https://www.hmoegirl.com/%E8%9B%A4%E4%B8%89%E7%AF%87#%E5%8E%9F%E6%96%87_2)
+1. [给家里的TCL电视安装当贝桌面、刷精简系统。 - ZhensJoke - 飞云算博客][1]
+2. [Brevent/aosp/README.md - GitHub](https://github.com/zyonbao/Brevent/blob/a9e6ee9e681735c51f5a49247c101bf09ea412f8/aosp/README.md)
+3. [refs/tags/android-5.0.1_r1 - platform/frameworks/base - Git at Google](https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-5.0.1_r1)
+4. [java - JADX output decompile error: "Code decompiled incorrectly, please refer to instructions dump." - Stack Overflow](https://stackoverflow.com/a/43390073)
+5. [蛤三篇 - H 萌娘](https://www.hmoegirl.com/%E8%9B%A4%E4%B8%89%E7%AF%87#%E5%8E%9F%E6%96%87_2)
 
 [1]: https://blog.fyun.org/tcl-root.html
 [su]: https://download.chainfire.eu/supersu
