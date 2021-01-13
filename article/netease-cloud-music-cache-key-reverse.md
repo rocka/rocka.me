@@ -326,8 +326,8 @@ console.log(getCacheKey(body));
 
 ## 参考
 
-1. https://juejin.im/post/5ac10c51f265da23a229408d
-2. https://juejin.im/post/5b1b6e4b6fb9a01e87569e96
+1. [Android逆向——网易云音乐排行榜api(上)](https://juejin.im/post/5ac10c51f265da23a229408d)
+2. [Android逆向——网易云音乐排行榜api(下)](https://juejin.im/post/5b1b6e4b6fb9a01e87569e96)
 
 [1]: https://github.com/Rocket1184/electron-netease-cloud-music
 [2]: https://github.com/Konloch/bytecode-viewer

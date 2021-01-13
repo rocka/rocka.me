@@ -47,4 +47,4 @@ ID 跟别人重复是一件非常尴尬的事情。尤其是当你想出一个�
 
 ref:
 
-1. [Request your GitHub username](https://awolski.com/request-your-github-username/)
+1. [Request your GitHub username | Tony Wolski](https://awolski.com/request-your-github-username/)

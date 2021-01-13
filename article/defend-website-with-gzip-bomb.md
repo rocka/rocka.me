@@ -105,8 +105,8 @@ server {
 
 ## 参考
 
-1. https://blog.haschek.at/2017/how-to-defend-your-website-with-zip-bombs.html
-2. http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files
+1. [How to defend your website with ZIP bombs](https://blog.haschek.at/2017/how-to-defend-your-website-with-zip-bombs.html)
+2. [Module ngx_http_core_module - nginx documentation](http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files)
 
 [1]: https://gitlab.com/drizzt/vps2arch/
 [2]: https://gist.github.com/rocka/d00d5c49c7ecfd1c658dc08c1bb0a0eb

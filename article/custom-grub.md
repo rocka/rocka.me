@@ -14,7 +14,6 @@
 
 一开始找到了 [Aurora Pnguinis](https://www.gnome-look.org/p/1009533/) 这个主题，比较合我的口味。然后是常规的下载安装，不过步骤还是写一下吧：
 
-
 文件托管在Bitbucket上，下载好 `tar.gz` 包以后解压，
 
 ```bash
@@ -64,6 +63,7 @@ GRUB_GFXMODE=640x480
 GRUB_GFXMODE=1920x1080x32
 GRUB_GFXPAYLOAD_LINUX=keep
 ```
+
 ### 修改背景图片
 
 虽然默认图片很好看，但还是有点太艳丽了。我需要一个低调一点的。
@@ -90,6 +90,7 @@ sudo vim theme.txt
 ```ini
 desktop-image: "GRUBbkg.png"
 ```
+
 ### 修改字体
 
 GRUB 使用的字体是 `.pf2` 格式的点阵字体，不能直接上 `.ttf` 之类的矢量字体，但是有办法转换。
@@ -131,7 +132,6 @@ sudo vim theme.txt
 ```
 
 保存结束，最后别忘了更新：
-
 
 ```bash
 sudo update-grub

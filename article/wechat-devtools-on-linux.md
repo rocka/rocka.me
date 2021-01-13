@@ -29,13 +29,13 @@
         └── Versions
 ```
 
-打开 `wechatwebdevtools.app/Contents/Resources` ，里面出现了 `app.nw` 这个文件夹，原来用的是 nw.js 。继续进入，果然有 `node_modules` 以及 `package.json` 。然后进入 `node_modules` 看一下，发现了 `react` ， `react-dom` ， `react-redux` ........ 以及一大堆的 babel 插件。从 `stage-0` 到 `stage-3` ，`babel-register` ， `babel-minify` 一应俱全。在打包的时候就不能把这些 devDeps 给删掉吗？？？
+打开 wechatwebdevtools.app/Contents/Resources ，里面出现了 app.nw 这个文件夹，原来用的是 nw.js 。继续进入，果然有 node_modules 以及 package.json 。然后进入 node_modules 看一下，发现了 react ， react-dom ， react-redux ........ 以及一大堆的 babel 插件。从 stage-0 到 stage-3 ，babel-register ， babel-minify 一应俱全。在打包的时候就不能把这些 devDeps 给删掉吗？？？
 
 暂停一下，继续来看看能不能运行。
 
-AUR 里面装一个 `nwjs-bin` 就行了。然后 cd 到 `app.nw` 运行
+AUR 里面装一个 nwjs-bin 就行了。然后 cd 到 app.nw 运行
 
-```bash
+```console
 $ nw .
 ```
 
@@ -60,4 +60,3 @@ $ nw .
 ~~啊，赶在八月结束之前又水了一片文章呢~~
 
 > 本文在撰写时，使用的微信开发者工具版本号为 1.00.170830
-

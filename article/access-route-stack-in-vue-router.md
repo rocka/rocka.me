@@ -52,7 +52,7 @@ watch: {
 
 ## 参考
 
-1. https://markus.oberlehner.net/blog/vue-router-page-transitions/
+1. [Vue Router Page Transitions with Fade, Slide and Zoom Effects - Markus Oberlehner](https://markus.oberlehner.net/blog/vue-router-page-transitions/)
 
 [1]: https://router.vuejs.org/guide/advanced/transitions.html#route-based-dynamic-transition
 [2]: https://github.com/Rocket1184/electron-netease-cloud-music

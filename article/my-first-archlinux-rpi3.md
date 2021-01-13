@@ -132,7 +132,7 @@ network={
 }
 ```
 
-为了方便之后操作，可以写个自动连接并获取 IP 的脚本 `connect.sh `：
+为了方便之后操作，可以写个自动连接并获取 IP 的脚本 `connect.sh`：
 
 ```shell
 #!/bin/sh
@@ -147,15 +147,13 @@ exit 0
 sudo chmod 775 /home/alarm/wlan/connect.sh
 ```
 
-
-
 ## 5 配置开机启动脚本
 
 WiFi 算是连接好了，如果断开了怎么重新连接？如果要连 WiFi ，要跑脚本；跑脚本要先连 ssh ；ssh 要先联网，但如果已经连上网了，我连 WiFi 干什么？？？似乎构成了循环依赖。 心累 =。=
 
 所以还是琢磨着搞一个开机启动脚本。然而 Arch Linux 似乎没有 `/etc/rc.local` 这个东西，幸好我在[这里](https://bbs.archlinux.org/viewtopic.php?id=148170)搜到了可以利用系统服务来开机启动脚本的教程，魔改一下还是可以用的。
 
-首先创建文件： 
+首先创建文件：
 
 ```shell
 sudo touch /usr/lib/systemd/system/rc.local.service
