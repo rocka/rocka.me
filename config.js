@@ -50,7 +50,7 @@ module.exports = {
             ],
             script: [
                 { src: '/static/js/melody-player/dist/player.min.js', async: true },
-                { src: '/static/js/fathom.js', async: true }
+                { src: '//umami.rocka.me/umami.js', async: true, defer: true, 'data-website-id': '850269c8-4b56-4086-9c1e-677019a08ee5'}
             ]
         },
         nav: [
