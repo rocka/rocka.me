@@ -85,7 +85,8 @@ module.exports = {
                     { text: 'FGHRSH', attr: { href: 'https://www.fghrsh.net', target: '_blank' } },
                     { text: 'I/O OVER', attr: { href: 'https://ioover.net', target: '_blank' } },
                     // { text: 'jijiwuming', attr: { href: 'https://www.jijiwuming.cn', target: '_blank' } }
-                    { text: 'MELTYLAND', attr: { href: 'https://melty.land', target: '_blank' } }
+                    { text: 'MELTYLAND', attr: { href: 'https://melty.land', target: '_blank' } },
+                    { text: '初等記憶體', attr: { href: 'https://axionl.me', target: '_blank' } }
                 ]
             },
             {
