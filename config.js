@@ -64,8 +64,9 @@ module.exports = {
                 '/static/img/header/dew.jpg',
                 '/static/img/header/steve.jpg',
                 '/static/img/header/horo1.jpg',
-                '/static/img/header/AzurLane-Neptunia.jpg',
+                '/static/img/header/neptunia-azurlane.jpg',
                 '/static/img/header/ten_o_yowa.jpg',
+                '/static/img/header/koishi.jpg',
                 '/static/img/header/shine.jpg',
                 '/static/img/header/PLASMA_ULTIMATE.jpg',
                 '/static/img/header/firewatch-tower.jpg'
