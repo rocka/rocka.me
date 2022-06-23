@@ -118,8 +118,11 @@ module.exports = {
             lang: 'zh',
             embed: 'https://isso.rocka.me/js/embed.min.js',
             prefix: 'https://isso.rocka.me/',
+            avatar: false,
+            gravatar: true,
             author: true,
             email: true,
+            replySelf: true,
             replyNotifications: true
         }
     }
