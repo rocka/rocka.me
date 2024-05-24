@@ -256,7 +256,7 @@ public class a {
 
 ```
 
-好像终于找到加密的部分了，但这个 AES 既写密钥长度，也没写 mode ... 哦不对，根据前面找到的 `)(13daqP@ssw0rd~` ，可以判断密钥位数是 128 位，那 mode 呢？
+好像终于找到加密的部分了，但这个 AES 既没写密钥长度，也没写 mode ... 哦不对，根据前面找到的 `)(13daqP@ssw0rd~` ，可以判断密钥位数是 128 位，那 mode 呢？
 
 根据 [Oracle 的文档][5]，如果只提供 algorithm 而不提供 mode/padding ，会使用 provider 默认值，例如 `SunJCE` 的默认值是 ECB mode 和 PKCS5Padding 。
 
