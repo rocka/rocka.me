@@ -50,7 +50,7 @@ module.exports = {
             ],
             script: [
                 { src: '/static/js/melody-player/dist/player.min.js', async: true },
-                { src: '//umami.rocka.me/umami.js', async: true, defer: true, 'data-website-id': '850269c8-4b56-4086-9c1e-677019a08ee5'}
+                { src: '//umami.rocka.me/script.js', async: true, defer: true, 'data-website-id': '850269c8-4b56-4086-9c1e-677019a08ee5'}
             ]
         },
         nav: [
@@ -103,7 +103,7 @@ module.exports = {
                 name: 'Subscribe',
                 items: [
                     { text: 'RSS', attr: { rel: 'alternate', type: 'application/rss+xml', href: 'https://rocka.me/rss' } },
-                    { text: 'Mastodon', attr: { rel: 'me', href: 'https://sn.angry.im/@Rocka', target: '_blank' } },
+                    { text: 'Fediverse', attr: { rel: 'me', href: 'https://comfy.social/@rocka', target: '_blank' } },
                 ]
             }
         ],
